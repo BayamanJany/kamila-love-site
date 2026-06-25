@@ -510,3 +510,85 @@ body.chapter {
 .poster-layout {
   padding-bottom: 140px;
 }
+
+/* Сердитый котик после четвёртого «Нет» */
+
+#angry-cat {
+  position: fixed;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+  z-index: 30;
+  text-align: center;
+  pointer-events: none;
+}
+
+#angry-cat.hidden {
+  display: none;
+}
+
+.angry-cat-face {
+  font-size: 90px;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.45));
+}
+
+.angry-message {
+  margin-top: 6px;
+  padding: 12px 18px;
+  max-width: 300px;
+  border: 2px solid #ffc1d8;
+  border-radius: 18px;
+  background: rgba(44, 8, 32, 0.92);
+  color: #fff;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 1.35;
+  box-shadow: 0 8px 25px rgba(255, 62, 138, 0.35);
+}
+
+.angry-show .angry-cat-face {
+  animation: angryShake 0.7s ease-in-out;
+}
+
+.angry-show .angry-message {
+  animation: angryPop 0.7s ease-in-out;
+}
+
+@keyframes angryShake {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(-10deg) scale(1.12);
+  }
+
+  40% {
+    transform: rotate(10deg) scale(1.12);
+  }
+
+  60% {
+    transform: rotate(-7deg);
+  }
+
+  80% {
+    transform: rotate(7deg);
+  }
+}
+
+@keyframes angryPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
