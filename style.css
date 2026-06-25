@@ -455,3 +455,58 @@ body.chapter-poster {
 .poster-next:hover {
   transform: translateY(-2px);
 }
+
+/* Главная страница: фон движется, кнопки стоят на месте */
+
+body.index {
+  background: linear-gradient(
+    120deg,
+    #051b3d,
+    #152c65,
+    #39164f,
+    #061b3b
+  );
+  background-size: 300% 300%;
+  animation: backgroundMove 16s ease-in-out infinite alternate;
+}
+
+body.index > h1,
+body.index > .buttons,
+body.index > #sad-cat {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Кнопки перехода всегда внизу экрана */
+
+.page2 .page2-next,
+.chapter .next-btn,
+.chapter .home-btn,
+.poster-next {
+  position: fixed !important;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  z-index: 9999;
+  margin: 0 !important;
+}
+
+/* Оставляет место снизу, чтобы кнопка не закрывала текст и фото */
+
+body.chapter {
+  padding-bottom: 130px;
+}
+
+.poster-layout {
+  padding-bottom: 140px;
+}
