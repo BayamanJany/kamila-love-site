@@ -592,3 +592,33 @@ body.chapter {
     transform: scale(1);
   }
 }
+
+/* Кнопка второй страницы — под фотографией, не поверх неё */
+.page2 .page2-next {
+  position: static !important;
+  display: inline-block;
+  margin: 18px auto 0 !important;
+  transform: none !important;
+  z-index: 6;
+}
+
+/* Нормальное отображение на телефоне */
+@media (max-width: 600px) {
+  .page2 .foundation {
+    top: 15%;
+    width: 78vw;
+    max-width: none;
+  }
+
+  .page2 .central-photo {
+    display: block;
+    width: 62%;
+    max-width: 230px;
+    margin: 20px auto 0;
+  }
+
+  .page2 .page2-next {
+    font-size: 1rem;
+    padding: 13px 20px;
+  }
+}
