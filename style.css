@@ -742,5 +742,73 @@ body.index > h1 {
   }
 }
 
+/* Главная страница — нормальное отображение на телефоне */
+@media (max-width: 600px) {
+  body.index {
+    min-height: 100svh;
+    justify-content: flex-start;
+    padding: 150px 18px 40px;
+    box-sizing: border-box;
+  }
+
+  body.index h1 {
+    font-size: clamp(2.4rem, 12vw, 3.3rem);
+    line-height: 1.08;
+    margin: 0 0 30px;
+    position: relative;
+    z-index: 40;
+  }
+
+  .buttons {
+    position: relative;
+    z-index: 50;
+    min-height: 62px;
+  }
+
+  /* Грустный котик находится ниже кнопок */
+  #sad-cat {
+    position: fixed;
+    left: 50%;
+    top: 73%;
+    bottom: auto;
+    width: min(62vw, 240px);
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  #sad-cat img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 32vh;
+    object-fit: contain;
+    margin: 0 auto 10px;
+  }
+
+  #sad-cat p {
+    font-size: 1rem;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  /* Сердитый кот появляется ниже и не закрывает кнопку «Да» */
+  #angry-cat {
+    left: 50%;
+    bottom: 7%;
+    width: min(82vw, 330px);
+    transform: translateX(-50%);
+    z-index: 30;
+  }
+
+  .angry-cat-face {
+    font-size: 76px;
+  }
+
+  .angry-message {
+    font-size: 1rem;
+    padding: 11px 15px;
+    margin: 5px auto 0;
+  }
+}
 
 
