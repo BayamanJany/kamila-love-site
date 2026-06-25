@@ -890,4 +890,341 @@ body.index > h1 {
   }
 }
 
+/* =========================================================
+   ГЛАВА 4 — «Моё вдохновение»
+   ========================================================= */
+
+body.chapter-four {
+  margin: 0;
+  min-height: 100svh;
+  padding-bottom: 110px;
+  overflow-x: hidden;
+  color: #fff4dd;
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(117, 59, 149, 0.32), transparent 34%),
+    linear-gradient(180deg, #100715 0%, #160720 42%, #08040c 100%);
+}
+
+.chapter4-stage {
+  position: relative;
+  isolation: isolate;
+  min-height: 1320px;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: clamp(92px, 11vw, 150px) clamp(28px, 9vw, 160px) 170px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Театральные шторы по бокам */
+.chapter4-stage::before,
+.chapter4-stage::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(80px, 13vw, 210px);
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(68, 0, 15, 0.94), rgba(133, 8, 31, 0.88) 44%, rgba(39, 0, 10, 0.76)),
+    repeating-linear-gradient(80deg, transparent 0 18px, rgba(255, 128, 128, 0.12) 19px 25px);
+  box-shadow: inset -14px 0 25px rgba(0, 0, 0, 0.42);
+}
+
+.chapter4-stage::before {
+  left: 0;
+  border-radius: 0 0 40px 0;
+}
+
+.chapter4-stage::after {
+  right: 0;
+  transform: scaleX(-1);
+  border-radius: 0 0 0 40px;
+}
+
+/* Лёгкие сияющие точки */
+.chapter4-sparkles {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  opacity: 0.75;
+  background-image:
+    radial-gradient(circle, rgba(255, 224, 150, 0.88) 0 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 179, 211, 0.75) 0 1px, transparent 2px);
+  background-position: 12% 18%, 84% 10%;
+  background-size: 130px 150px, 190px 170px;
+}
+
+/* Центральный текст */
+.chapter4-story {
+  position: relative;
+  z-index: 2;
+  width: min(650px, 100%);
+  margin: 0 auto;
+  padding: clamp(32px, 4.4vw, 60px) clamp(24px, 4vw, 54px);
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid rgba(255, 219, 153, 0.56);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(45, 19, 52, 0.92), rgba(16, 8, 25, 0.94)),
+    #180918;
+  box-shadow:
+    0 22px 70px rgba(0, 0, 0, 0.52),
+    inset 0 0 34px rgba(255, 204, 130, 0.08);
+}
+
+.chapter4-story::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(255, 214, 148, 0.2);
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.chapter4-number {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 8px 20px;
+  border: 1px solid rgba(255, 218, 152, 0.58);
+  border-radius: 999px;
+  color: #ffe0a8;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  letter-spacing: 0.06em;
+  background: rgba(9, 4, 17, 0.5);
+}
+
+.chapter4-story h1 {
+  position: relative;
+  margin: 0;
+  color: #ffe0a8;
+  text-shadow: 0 0 18px rgba(255, 185, 96, 0.48);
+  font-size: clamp(2.25rem, 5vw, 4.2rem);
+  line-height: 1.04;
+  font-weight: 600;
+}
+
+.chapter4-heart {
+  position: relative;
+  margin: 12px 0 24px;
+  color: #ffd18e;
+  font-size: 3rem;
+  line-height: 1;
+  text-shadow: 0 0 18px rgba(255, 138, 184, 0.68);
+}
+
+.chapter4-story p {
+  position: relative;
+  margin: 0;
+  color: #fff5e7;
+  font-size: clamp(1.07rem, 1.65vw, 1.37rem);
+  line-height: 1.58;
+}
+
+.chapter4-divider {
+  position: relative;
+  display: block;
+  width: 80px;
+  margin: 22px auto;
+  color: #f8c87e;
+  font-size: 1.2rem;
+}
+
+.chapter4-divider::before,
+.chapter4-divider::after {
+  content: "";
+  position: absolute;
+  top: 52%;
+  width: 28px;
+  height: 1px;
+  background: rgba(255, 215, 142, 0.55);
+}
+
+.chapter4-divider::before {
+  right: 100%;
+  margin-right: 12px;
+}
+
+.chapter4-divider::after {
+  left: 100%;
+  margin-left: 12px;
+}
+
+/* Фото как полароиды */
+.chapter4-photo {
+  position: absolute;
+  z-index: 3;
+  width: clamp(150px, 19vw, 290px);
+  margin: 0;
+  padding: 9px 9px 36px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 250, 227, 0.82);
+  border-radius: 12px;
+  background: #fff9e9;
+  color: #5a351f;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.48);
+  transform-origin: center;
+}
+
+.chapter4-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.chapter4-photo figcaption {
+  position: absolute;
+  right: 8px;
+  bottom: 10px;
+  left: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
+  font-style: italic;
+}
+
+/* Расположение фото на компьютере */
+.chapter4-photo--top-left {
+  top: clamp(52px, 9vw, 130px);
+  left: clamp(20px, 4vw, 80px);
+  transform: rotate(-6deg);
+}
+
+.chapter4-photo--top-right {
+  top: clamp(60px, 10vw, 150px);
+  right: clamp(20px, 4vw, 80px);
+  transform: rotate(6deg);
+}
+
+.chapter4-photo--bottom-left {
+  bottom: clamp(70px, 8vw, 125px);
+  left: clamp(20px, 5vw, 100px);
+  transform: rotate(5deg);
+}
+
+.chapter4-photo--bottom-right {
+  right: clamp(20px, 5vw, 100px);
+  bottom: clamp(70px, 8vw, 125px);
+  transform: rotate(-5deg);
+}
+
+/* Кнопка возвращения в начало */
+.chapter4-home {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px;
+  padding: 14px 26px;
+  border: 2px solid rgba(255, 183, 218, 0.8);
+  border-radius: 999px;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #ff4e9a, #9e0e5f);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.08rem;
+  box-shadow: 0 10px 25px rgba(240, 35, 125, 0.42);
+}
+
+.chapter4-home:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 14px 30px rgba(240, 35, 125, 0.58);
+}
+
+/* Телефон: фото становятся сеткой, ничего не перекрывается */
+@media (max-width: 850px) {
+  body.chapter-four {
+    padding-bottom: 110px;
+  }
+
+  .chapter4-stage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 12px;
+    min-height: auto;
+    padding: 32px 16px 145px;
+    align-items: start;
+  }
+
+  .chapter4-stage::before,
+  .chapter4-stage::after {
+    width: 32px;
+    opacity: 0.78;
+  }
+
+  .chapter4-story {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    padding: 32px 22px;
+    border-radius: 22px;
+  }
+
+  .chapter4-photo {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    padding: 6px 6px 30px;
+  }
+
+  .chapter4-photo--top-left {
+    grid-column: 1;
+    grid-row: 1;
+    transform: rotate(-3deg);
+  }
+
+  .chapter4-photo--top-right {
+    grid-column: 2;
+    grid-row: 1;
+    transform: rotate(3deg);
+  }
+
+  .chapter4-photo--bottom-left {
+    grid-column: 1;
+    grid-row: 3;
+    transform: rotate(2deg);
+  }
+
+  .chapter4-photo--bottom-right {
+    grid-column: 2;
+    grid-row: 3;
+    transform: rotate(-2deg);
+  }
+
+  .chapter4-photo figcaption {
+    font-size: 0.73rem;
+    bottom: 8px;
+  }
+
+  .chapter4-story h1 {
+    font-size: clamp(2rem, 9vw, 3.1rem);
+  }
+
+  .chapter4-story p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .chapter4-home {
+    bottom: 16px;
+    min-width: 155px;
+    padding: 12px 21px;
+  }
+}
+
 
